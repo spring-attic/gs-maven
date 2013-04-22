@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.gs</groupId>
 	<artifactId>gs-maven-start</artifactId>
-	<name>Maven Getting Started</name>
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
 </project>
