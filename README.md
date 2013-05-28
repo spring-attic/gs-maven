@@ -52,7 +52,7 @@ To get started, create a file named _pom.xml_ at the root of the project and giv
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.gs</groupId>
 	<artifactId>gs-maven-start</artifactId>
-	<version>1.0.0</version>
+	<version>0.1.0</version>
 	<packaging>jar</packaging>
 </project>
 ```
@@ -64,6 +64,8 @@ With the exception of the `<packaging>` element (which is optional), this is the
 * `<artifactId>` - The name to be given to the project's library artifact (e.g., the name of its JAR or WAR file).
 * `<version>` - The version of the project that is being built.
 * `<packaging>` - How the project should be packaged. Defaults to "jar" for JAR file packaging. Use "war" for WAR file packaging.
+
+> **NOTE:** When it comes to choosing a versioning scheme, we recommend that you consider the [semantic versioning](http://semver.org) approach.
 
 At this point we have a minimal, but capable Maven project defined.
 
@@ -86,7 +88,7 @@ Since it's unlikely that you'll want to distribute or work with _.class_ files d
 $ mvn package
 ```
 
-The _package_ goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the _target_ directory. The name of the JAR file will be based on the project's `<artifactId>` and `<version>`. For example, given the minimal _pom.xml_ file from before, the JAR file will be named _gs-maven-start-1.0.0.jar_.
+The _package_ goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the _target_ directory. The name of the JAR file will be based on the project's `<artifactId>` and `<version>`. For example, given the minimal _pom.xml_ file from before, the JAR file will be named _gs-maven-start-0.1.0.jar_.
 
 > __Note__ : If you've changed the value of `<packaging>` from "jar" to "war", the result will be a WAR file within the _target_ directory instead of a JAR file.
 
