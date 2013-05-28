@@ -65,7 +65,7 @@ With the exception of the `<packaging>` element (which is optional), this is the
 * `<version>` - The version of the project that is being built.
 * `<packaging>` - How the project should be packaged. Defaults to "jar" for JAR file packaging. Use "war" for WAR file packaging.
 
-> **NOTE:** When it comes to choosing a versioning scheme, we recommend that you consider the [semantic versioning](http://semver.org) approach.
+> **Note:** When it comes to choosing a versioning scheme, we recommend that you consider the [semantic versioning](http://semver.org) approach.
 
 At this point we have a minimal, but capable Maven project defined.
 
