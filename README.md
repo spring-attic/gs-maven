@@ -1,21 +1,88 @@
-Building Java Projects with Maven
-=================================
-This Getting Started guide will walk you through a few basic pieces of setting up and using a Maven build.
+# Building Java Projects with Maven
 
-To help you get started, we've provided an initial project structure as well as the completed project for you in GitHub:
+What you'll build
+-----------------
 
-```sh
-$ git clone https://github.com/springframework-meta/gs-maven.git
+This guide walks you through using Maven to build a simple Java project. 
+
+What you'll need
+----------------
+
+ - About 15 minutes
+ - A favorite text editor or IDE
+ - [JDK 6][jdk] or later
+
+[jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+How to complete this guide
+--------------------------
+
+Like all Spring's [Getting Started guides](/getting-started), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
+
+To **start from scratch**, move on to [Set up the project](#scratch).
+
+To **skip the basics**, do the following:
+
+ - [Download][zip] and unzip the source repository for this guide, or clone it using [git](/understanding/git):
+`git clone https://github.com/springframework-meta/{@project-name}.git`
+ - cd into `{@project-name}/initial`
+ - Jump ahead to [Create a resource representation class](#initial).
+
+**When you're finished**, you can check your results against the code in `{@project-name}/complete`.
+
+<a name="scratch"></a>
+Set up the project
+------------------
+
+First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, you should keep the project as simple as possible for now.
+
+### Create the directory structure
+
+In a project directory of your choosing, create the following subdirectory structure; for example, with `mkdir -p src/main/java/hello` on *nix systems:
+
+    └── src
+        └── main
+            └── java
+                └── hello
+
+### Creating Java classes
+
+Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, we recommend that you create two classes: `HelloWorld.java` and `Greeter.java`.
+
+`src/main/java/hello/HelloWorld.java`
+```java
+package hello;
+
+import org.joda.time.LocalTime;
+
+public class HelloWorld {
+  public static void main(String[] args) {
+    LocalTime currentTime = new LocalTime();
+    System.out.println("The current local time is: " + currentTime);
+
+    Greeter greeter = new Greeter();
+    System.out.println(greeter.sayHello());
+  }
+}
 ```
 
-In the `start` folder, you'll find a bare project, ready for you to copy-n-paste code snippets from this document. In the `complete` folder, you'll find the complete project code. 
+`src/main/java/hello/Greeter.java`
+```java
+package hello;
 
-In both cases, you'll find a simple Java project that we'll build. Our focus will be on the _pom.xml_ file. The Java files are only there as source for our build efforts.
+public class Greeter {
+  public String sayHello() {
+    return "Hello world!";
+  }
+}
+```
 
-We'll start by installing Maven and then start filling in the _pom.xml_ file. If you already have Maven installed, then you can jump to the [fun part](#defining-a-simple-maven-build).
 
-Installing Maven
-----------------
+<a name="initial"></a>
+### Installing Maven
+
+Now that you have a project that is ready to be built with Maven, the next step is to install Maven.
+
 Maven is downloadable as a zip file at http://maven.apache.org/download.cgi. Only the binaries are required, so look for the link to apache-maven-_{version}_-bin.zip or apache-maven-_{version}_-bin.tar.gz.
 
 Once you have downloaded the zip file, unzip it to your computer. Then add the _bin_ folder to your path.
@@ -41,7 +108,7 @@ Congratulations! You now have Maven installed.
 
 Defining a Simple Maven Build
 -----------------------------
-Now that Maven is installed, we need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file expresses the project's name, version, and any dependencies that it has on external libraries.
+Now that Maven is installed, you need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file expresses the project's name, version, and any dependencies that it has on external libraries.
 
 To get started, create a file named _pom.xml_ at the root of the project and give it the following contents:
 
@@ -67,12 +134,12 @@ With the exception of the `<packaging>` element (which is optional), this is the
 
 > **Note:** When it comes to choosing a versioning scheme, we recommend that you consider the [semantic versioning](http://semver.org) approach.
 
-At this point we have a minimal, but capable Maven project defined.
+At this point you have a minimal, yet capable Maven project defined.
 
 
 Building Java Code
 ------------------
-Maven is now ready to build our project. There are several build lifecycle goals we can execute against it now, including goals to compile our code, create a library package (e.g., a JAR file), and install the library in the local Maven dependency repository.
+Maven is now ready to build the project. There are several build lifecycle goals you can execute against it now, including goals to compile the project's code, create a library package (e.g., a JAR file), and install the library in the local Maven dependency repository.
 
 To try out the build, issue the following at the command line:
 
@@ -100,15 +167,15 @@ $ mvn install
 
 The _install_ goal will compile, test, and package your project's code and then copy it into the local dependency repository, ready for another project to reference it as a dependency.
 
-Speaking of dependencies, let's see how to declare dependencies in our Maven build.
+Speaking of dependencies, now it's time to declare dependencies in the Maven build.
 
 Declaring Dependencies
 ----------------------
-Our simple Hello World sample is completely self-contained and does not depend on any additional libraries. Most application, however, depend on external libraries to handle common and/or complex functionality.
+The simple Hello World sample is completely self-contained and does not depend on any additional libraries. Most applications, however, depend on external libraries to handle common and/or complex functionality.
 
-For example, suppose that in addition to saying "Hello World!", we wanted our application to print the current date and time. While we could use the date and time facilities in the native Java libraries, let's make things more interesting by using the Joda Time libraries.
+For example, suppose that in addition to saying "Hello World!", you want the application to print the current date and time. While you could use the date and time facilities in the native Java libraries, you can make things more interesting by using the Joda Time libraries.
 
-First, let's change HelloWorld.java to look like this:
+First, change HelloWorld.java to look like this:
 
 ```java
 package hello;
@@ -126,9 +193,9 @@ public class HelloWorld {
 }
 ```
 
-Here we're using Joda Time's `LocalTime` class to get and print the current time. 
+Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time. 
 
-If we were to run `mvn compile` to build our project now, the build would fail because we've not declared Joda Time as a compile dependency in our build. Let's fix that by adding the following lines to _pom.xml_ (within the `<project>` element):
+If you were to run `mvn compile` to build the project now, the build would fail because you've not declared Joda Time as a compile dependency in the build. You can fix that by adding the following lines to _pom.xml_ (within the `<project>` element):
 
 ```xml
 <dependencies>
@@ -140,27 +207,42 @@ If we were to run `mvn compile` to build our project now, the build would fail b
 </dependencies>
 ```
 
-This block of XML declares a list of dependencies for our project. Specifically, it declares a single dependency for the Joda Time library. Within the `<dependency>` element, the dependency coordinates are defined by three subelements:
+This block of XML declares a list of dependencies for the project. Specifically, it declares a single dependency for the Joda Time library. Within the `<dependency>` element, the dependency coordinates are defined by three subelements:
 
 * `<groupId>` - The group or organization that the dependency belongs to.
 * `<artifactId>` - The library that is required.
 * `<version>` - The specific version of the library that is required.
 
-By default, all dependencies are scoped as `compile` dependencies. That is, they should be available at compile-time (and if were were building a WAR file, including in the _/WEB-INF/libs_ folder of the WAR). Additionally, you may specify a `<scope>` element to specify one of the following scopes:
+By default, all dependencies are scoped as `compile` dependencies. That is, they should be available at compile-time (and if you were building a WAR file, including in the _/WEB-INF/libs_ folder of the WAR). Additionally, you may specify a `<scope>` element to specify one of the following scopes:
 
 * `provided` - Dependencies that are required for compiling the project code, but that will be provided at runtime by a container running the code (e.g., the Java Servlet API).
 * `test` - Dependencies that are used for compiling and running tests, but not required for building or running the project's runtime code.
 
 Now if you run `mvn compile` or `mvn package`, Maven should resolve the Joda Time dependency from the Maven Central repository and the build will be successful.
 
+Here's the completed `pom.xml` file:
+
+`pom.xml`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.gs</groupId>
+	<artifactId>gs-maven-start</artifactId>
+	<packaging>jar</packaging>
+	<version>0.1.0</version>
+
+  <dependencies>
+      <dependency>
+          <groupId>joda-time</groupId>
+          <artifactId>joda-time</artifactId>
+          <version>2.2</version>
+      </dependency>	
+  </dependencies>	
+</project>
+```
 
 Next Steps
 ----------
 Congratulations! You have not created a very simple, yet effective Maven project definition for building Java projects.
-
-There's much more to building projects with Maven. For continued exploration of Maven, you may want to have a look at the following Getting Started guides:
-
-* Building web applications with Maven
-* Setting Maven properties
-
-And for an alternate approach to building projects, your may want to look at [Building Java Projects with Gradle](https://github.com/springframework-meta/gs-gradle/blob/master/README.md).
