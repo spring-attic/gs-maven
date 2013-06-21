@@ -20,13 +20,13 @@ What you'll need
 Set up the project
 ------------------
 
-First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, you should keep the project as simple as possible for now.
+First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, make the project as simple as possible for now.
 
 {!include#create-directory-structure-hello}
 
-### Creating Java classes
+### Create Java classes
 
-Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity's sake and for consistency with the rest of this guide, we recommend that you create two classes: `HelloWorld.java` and `Greeter.java`.
+Within the `src/main/java/hello` directory, you can create any Java classes you want. To maintain consistency with the rest of this guide, create these two classes: `HelloWorld.java` and `Greeter.java`.
 
     {!include:complete/src/main/java/hello/HelloWorld.java}
 
@@ -34,7 +34,7 @@ Within the `src/main/java/hello` directory, you can create any Java classes you 
 
 
 <a name="initial"></a>
-### Installing Maven
+### Install Maven
 
 Now that you have a project that is ready to be built with Maven, the next step is to install Maven.
 
@@ -42,7 +42,7 @@ Maven is downloadable as a zip file at http://maven.apache.org/download.cgi. Onl
 
 Once you have downloaded the zip file, unzip it to your computer. Then add the _bin_ folder to your path.
 
-To test the Maven installation, run `mvn` from the command-line like this:
+To test the Maven installation, run `mvn` from the command-line:
 
 ```sh
 $ mvn -v
@@ -61,11 +61,11 @@ OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
 
 Congratulations! You now have Maven installed.
 
-Defining a Simple Maven Build
+Define a simple Maven build
 -----------------------------
-Now that Maven is installed, you need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file expresses the project's name, version, and any dependencies that it has on external libraries.
+Now that Maven is installed, you need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file gives the project's name, version, and dependencies that it has on external libraries.
 
-To get started, create a file named _pom.xml_ at the root of the project and give it the following contents:
+Create a file named _pom.xml_ at the root of the project and give it the following contents:
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -79,22 +79,22 @@ To get started, create a file named _pom.xml_ at the root of the project and giv
 </project>
 ```
 
-With the exception of the `<packaging>` element (which is optional), this is the simplest possible _pom.xml_ file necessary to build a Java project. It includes the following details of the project configuration:
+With the exception of the optional `<packaging>` element, this is the simplest possible _pom.xml_ file necessary to build a Java project. It includes the following details of the project configuration:
 
-* `<modelVersion>` - The POM model version (always 4.0.0).
-* `<groupId>` - The group or organization that the project belongs to. Often expressed as an inverted domain name.
-* `<artifactId>` - The name to be given to the project's library artifact (e.g., the name of its JAR or WAR file).
-* `<version>` - The version of the project that is being built.
+* `<modelVersion>`. POM model version (always 4.0.0).
+* `<groupId>`. Group or organization that the project belongs to. Often expressed as an inverted domain name.
+* `<artifactId>`. Name to be given to the project's library artifact (for example, the name of its JAR or WAR file).
+* `<version>`. Version of the project that is being built.
 * `<packaging>` - How the project should be packaged. Defaults to "jar" for JAR file packaging. Use "war" for WAR file packaging.
 
-> **Note:** When it comes to choosing a versioning scheme, we recommend that you consider the [semantic versioning](http://semver.org) approach.
+> **Note:** When it comes to choosing a versioning scheme, Spring recommends the [semantic versioning](http://semver.org) approach.
 
 At this point you have a minimal, yet capable Maven project defined.
 
 
-Building Java Code
+Build Java code
 ------------------
-Maven is now ready to build the project. There are several build lifecycle goals you can execute against it now, including goals to compile the project's code, create a library package (e.g., a JAR file), and install the library in the local Maven dependency repository.
+Maven is now ready to build the project. You can execute several build lifecycle goals with Maven now, including goals to compile the project's code, create a library package (such as a JAR file), and install the library in the local Maven dependency repository.
 
 To try out the build, issue the following at the command line:
 
