@@ -181,4 +181,4 @@ Here's the completed `pom.xml` file:
 
 Next Steps
 ----------
-Congratulations! You have not created a very simple, yet effective Maven project definition for building Java projects.
+Congratulations! You have now created a very simple, yet effective Maven project definition for building Java projects.
