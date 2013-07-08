@@ -1,3 +1,4 @@
+<#assign project_id="gs-maven">
 
 # Building Java Projects with Maven
 
@@ -15,22 +16,7 @@ What you'll need
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-How to complete this guide
---------------------------
-
-Like all Spring's [Getting Started guides](/getting-started), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
-
-To **start from scratch**, move on to [Set up the project](#scratch).
-
-To **skip the basics**, do the following:
-
- - [Download][zip] and unzip the source repository for this guide, or clone it using [git](/understanding/git):
-`git clone https://github.com/springframework-meta/gs-maven.git`
- - cd into `gs-maven/initial`
- - Jump ahead to [Install Maven](#initial).
-
-**When you're finished**, you can check your results against the code in `gs-maven/complete`.
-[zip]: https://github.com/springframework-meta/gs-maven/archive/master.zip
+## <@how_to_complete_this_guide jump_ahead='Install Maven'/>
 
 <a name="scratch"></a>
 Set up the project
@@ -38,46 +24,15 @@ Set up the project
 
 First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, make the project as simple as possible for now.
 
-### Create the directory structure
-
-In a project directory of your choosing, create the following subdirectory structure; for example, with `mkdir -p src/main/java/hello` on *nix systems:
-
-    └── src
-        └── main
-            └── java
-                └── hello
+<@create_directory_structure_hello/>
 
 ### Create Java classes
 
 Within the `src/main/java/hello` directory, you can create any Java classes you want. To maintain consistency with the rest of this guide, create these two classes: `HelloWorld.java` and `Greeter.java`.
 
-`src/main/java/hello/HelloWorld.java`
-```java
-package hello;
+    <@snippet path="src/main/java/hello/HelloWorld.java" prefix="complete"/>
 
-import org.joda.time.LocalTime;
-
-public class HelloWorld {
-  public static void main(String[] args) {
-    LocalTime currentTime = new LocalTime();
-    System.out.println("The current local time is: " + currentTime);
-
-    Greeter greeter = new Greeter();
-    System.out.println(greeter.sayHello());
-  }
-}
-```
-
-`src/main/java/hello/Greeter.java`
-```java
-package hello;
-
-public class Greeter {
-  public String sayHello() {
-    return "Hello world!";
-  }
-}
-```
+    <@snippet path="src/main/java/hello/Greeter.java" prefix="complete"/>
 
 
 <a name="initial"></a>
@@ -157,7 +112,7 @@ Since it's unlikely that you'll want to distribute or work with _.class_ files d
 $ mvn package
 ```
 
-The _package_ goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the _target_ directory. The name of the JAR file will be based on the project's `<artifactId>` and `<version>`. For example, given the minimal _pom.xml_ file from before, the JAR file will be named _gs-maven-initial-0.1.0.jar_.
+The _package_ goal will compile your Java code, run any tests, and finish by packaging the code up in a JAR file within the _target_ directory. The name of the JAR file will be based on the project's `<artifactId>` and `<version>`. For example, given the minimal _pom.xml_ file from before, the JAR file will be named _${project_id}-initial-0.1.0.jar_.
 
 > __Note__ : If you've changed the value of `<packaging>` from "jar" to "war", the result will be a WAR file within the _target_ directory instead of a JAR file.
 
@@ -224,26 +179,7 @@ Now if you run `mvn compile` or `mvn package`, Maven should resolve the Joda Tim
 
 Here's the completed `pom.xml` file:
 
-`pom.xml`
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.springframework.gs</groupId>
-	<artifactId>gs-maven-complete</artifactId>
-	<packaging>jar</packaging>
-	<version>0.1.0</version>
-
-  <dependencies>
-      <dependency>
-          <groupId>joda-time</groupId>
-          <artifactId>joda-time</artifactId>
-          <version>2.2</version>
-      </dependency>	
-  </dependencies>	
-</project>
-```
+    <@snippet path="pom.xml" prefix="complete"/>
 
 Next Steps
 ----------
