@@ -179,7 +179,7 @@ Now if you run `mvn compile` or `mvn package`, Maven should resolve the Joda Tim
 
 Here's the completed `pom.xml` file:
 
-    <@snippet path="pom.xml" prefix="complete"/>
+    <@snippet path="pom.xml" prefix="initial"/>
 
 Next Steps
 ----------

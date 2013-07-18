@@ -233,15 +233,7 @@ Here's the completed `pom.xml` file:
 	<groupId>org.springframework.gs</groupId>
 	<artifactId>gs-maven</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1.0</version>
-
-  <dependencies>
-      <dependency>
-          <groupId>joda-time</groupId>
-          <artifactId>joda-time</artifactId>
-          <version>2.2</version>
-      </dependency>	
-  </dependencies>	
+	<version>1.0.0</version>
 </project>
 ```
 
