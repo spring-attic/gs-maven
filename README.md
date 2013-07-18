@@ -18,7 +18,7 @@ What you'll need
 How to complete this guide
 --------------------------
 
-Like all Spring's [Getting Started guides](/getting-started), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
+Like all Spring's [Getting Started guides](guides/gs), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
 
 To **start from scratch**, move on to [Set up the project](#scratch).
 
@@ -26,7 +26,7 @@ To **skip the basics**, do the following:
 
  - [Download][zip] and unzip the source repository for this guide, or clone it using [git](/understanding/git):
 `git clone https://github.com/springframework-meta/gs-maven.git`
- - cd into `gs-maven/initial`
+ - cd into `gs-maven/initial`.
  - Jump ahead to [Install Maven](#initial).
 
 **When you're finished**, you can check your results against the code in `gs-maven/complete`.
