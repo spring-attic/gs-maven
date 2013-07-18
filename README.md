@@ -18,7 +18,7 @@ What you'll need
 How to complete this guide
 --------------------------
 
-Like all Spring's [Getting Started guides](guides/gs), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
+Like all Spring's [Getting Started guides](/guides/gs), you can start from scratch and complete each step, or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
 
 To **start from scratch**, move on to [Set up the project](#scratch).
 
