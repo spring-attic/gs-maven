@@ -231,7 +231,7 @@ Here's the completed `pom.xml` file:
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.gs</groupId>
-	<artifactId>gs-maven-complete</artifactId>
+	<artifactId>gs-maven</artifactId>
 	<packaging>jar</packaging>
 	<version>0.1.0</version>
 
