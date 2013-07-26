@@ -1,6 +1,4 @@
 
-# Building Java Projects with Maven
-
 What you'll build
 -----------------
 
