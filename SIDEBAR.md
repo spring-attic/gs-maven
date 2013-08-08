@@ -8,9 +8,9 @@ Building applications with Maven is just one facet of application development. Y
 * [Building Android Applications with Maven][gs-maven-android]
 * [Building Android Applications with Gradle][gs-gradle-android]
 
-[gs-gradle]: /guides/gs/gradle/content
-[gs-maven-android]: /guides/gs/maven-android/content
-[gs-gradle-android]: /guides/gs/gradle-android/content
+[gs-gradle]: /guides/gs/gradle/
+[gs-maven-android]: /guides/gs/maven-android/
+[gs-gradle-android]: /guides/gs/gradle-android/
 
 ### Tutorials
 
