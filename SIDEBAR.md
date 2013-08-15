@@ -2,7 +2,7 @@
 
 Building applications with Maven is just one facet of application development. You may want to continue your study of building applications with the following
 
-### Getting Started Guides
+### Getting Started guides
 
 * [Building Java Applications with Gradle][gs-gradle]
 * [Building Android Applications with Maven][gs-maven-android]
@@ -18,7 +18,7 @@ Building applications with Maven is just one facet of application development. Y
 
 [tut-rest]: /guides/tutorials/rest
 
-### Understanding
+### Concepts and technologies
 
 * [REST][u-rest]
 * [JSON][u-json]
