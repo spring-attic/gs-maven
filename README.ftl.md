@@ -125,9 +125,9 @@ The _install_ goal will compile, test, and package your project's code and then 
 
 Speaking of dependencies, now it's time to declare dependencies in the Maven build.
 
-Declaring Dependencies
+Declare Dependencies
 ----------------------
-The simple Hello World sample is completely self-contained and does not depend on any additional libraries. Most applications, however, depend on external libraries to handle common and/or complex functionality.
+The simple Hello World sample is completely self-contained and does not depend on any additional libraries. Most applications, however, depend on external libraries to handle common and complex functionality.
 
 For example, suppose that in addition to saying "Hello World!", you want the application to print the current date and time. While you could use the date and time facilities in the native Java libraries, you can make things more interesting by using the Joda Time libraries.
 
@@ -163,7 +163,7 @@ If you were to run `mvn compile` to build the project now, the build would fail 
 </dependencies>
 ```
 
-This block of XML declares a list of dependencies for the project. Specifically, it declares a single dependency for the Joda Time library. Within the `<dependency>` element, the dependency coordinates are defined by three subelements:
+This block of XML declares a list of dependencies for the project. Specifically, it declares a single dependency for the Joda Time library. Within the `<dependency>` element, the dependency coordinates are defined by three sub-elements:
 
 * `<groupId>` - The group or organization that the dependency belongs to.
 * `<artifactId>` - The library that is required.
@@ -180,6 +180,6 @@ Here's the completed `pom.xml` file:
 
     <@snippet path="pom.xml" prefix="initial"/>
 
-Next Steps
+Summary
 ----------
-Congratulations! You have now created a very simple, yet effective Maven project definition for building Java projects.
+Congratulations! You've created a simple yet effective Maven project definition for building Java projects.
