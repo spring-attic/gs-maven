@@ -1,10 +1,10 @@
-### Related Resources
+## Related resources
 
-Building applications with Maven is just one facet of application development. You may want to continue your study of building applications with the following
+Maven is just one facet of building applications. You can continue to explore application development with the following resources.
 
 ### Getting Started guides
 
-* [Building Java Applications with Gradle][gs-gradle]
+* [Building Java Projects with Gradle][gs-gradle]
 * [Building Android Applications with Maven][gs-maven-android]
 * [Building Android Applications with Gradle][gs-gradle-android]
 
