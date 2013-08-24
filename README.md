@@ -24,12 +24,12 @@ To **start from scratch**, move on to [Set up the project](#scratch).
 To **skip the basics**, do the following:
 
  - [Download][zip] and unzip the source repository for this guide, or clone it using [Git][u-git]:
-`git clone https://github.com/springframework-meta/gs-maven.git`
+`git clone https://github.com/spring-guides/gs-maven.git`
  - cd into `gs-maven/initial`.
  - Jump ahead to [Install Maven](#initial).
 
 **When you're finished**, you can check your results against the code in `gs-maven/complete`.
-[zip]: https://github.com/springframework-meta/gs-maven/archive/master.zip
+[zip]: https://github.com/spring-guides/gs-maven/archive/master.zip
 [u-git]: /understanding/Git
 
 <a name="scratch"></a>
