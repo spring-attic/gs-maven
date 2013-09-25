@@ -228,15 +228,24 @@ Here's the completed `pom.xml` file:
     <groupId>org.springframework.gs</groupId>
     <artifactId>gs-maven</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
-    
-    <dependencies>
-    	<dependency>
-    		<groupId>joda-time</groupId>
-    		<artifactId>joda-time</artifactId>
-    		<version>2.2</version>
-    	</dependency>
-    </dependencies>
+    <version>0.1.0</version>
+
+  <dependencies>
+      <dependency>
+          <groupId>joda-time</groupId>
+          <artifactId>joda-time</artifactId>
+          <version>2.2</version>
+      </dependency>    
+  </dependencies>    
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 ```
 
