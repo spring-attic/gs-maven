@@ -55,13 +55,8 @@ Within the `src/main/java/hello` directory, you can create any Java classes you 
 ```java
 package hello;
 
-import org.joda.time.LocalTime;
-
 public class HelloWorld {
   public static void main(String[] args) {
-    LocalTime currentTime = new LocalTime();
-    System.out.println("The current local time is: " + currentTime);
-
     Greeter greeter = new Greeter();
     System.out.println(greeter.sayHello());
   }
@@ -234,6 +229,14 @@ Here's the completed `pom.xml` file:
     <artifactId>gs-maven</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
+    
+    <dependencies>
+    	<dependency>
+    		<groupId>joda-time</groupId>
+    		<artifactId>joda-time</artifactId>
+    		<version>2.2</version>
+    	</dependency>
+    </dependencies>
 </project>
 ```
 
