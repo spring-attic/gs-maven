@@ -29,9 +29,9 @@ First you'll need to setup a Java project for Maven to build. To keep the focus 
 
 Within the `src/main/java/hello` directory, you can create any Java classes you want. To maintain consistency with the rest of this guide, create these two classes: `HelloWorld.java` and `Greeter.java`.
 
-    <@snippet path="src/main/java/hello/HelloWorld.java" prefix="complete"/>
+    <@snippet path="src/main/java/hello/HelloWorld.java" prefix="initial"/>
 
-    <@snippet path="src/main/java/hello/Greeter.java" prefix="complete"/>
+    <@snippet path="src/main/java/hello/Greeter.java" prefix="initial"/>
 
 
 <a name="initial"></a>
@@ -178,7 +178,7 @@ Now if you run `mvn compile` or `mvn package`, Maven should resolve the Joda Tim
 
 Here's the completed `pom.xml` file:
 
-    <@snippet path="pom.xml" prefix="initial"/>
+    <@snippet path="pom.xml" prefix="complete"/>
 
 Summary
 ----------
