@@ -56,10 +56,10 @@ Within the `src/main/java/hello` directory, you can create any Java classes you 
 package hello;
 
 public class HelloWorld {
-  public static void main(String[] args) {
-    Greeter greeter = new Greeter();
-    System.out.println(greeter.sayHello());
-  }
+    public static void main(String[] args) {
+        Greeter greeter = new Greeter();
+        System.out.println(greeter.sayHello());
+    }
 }
 ```
 
@@ -68,9 +68,9 @@ public class HelloWorld {
 package hello;
 
 public class Greeter {
-  public String sayHello() {
-    return "Hello world!";
-  }
+    public String sayHello() {
+        return "Hello world!";
+    }
 }
 ```
 
