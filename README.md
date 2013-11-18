@@ -248,6 +248,8 @@ Here's the completed `pom.xml` file:
     </build>
 </project>
 ```
+    
+> **Note:** This build file also includes the **maven-compiler-plugin**. This usually isn't required, but the [build server](https://drone.io/github.com/spring-guides/gs-maven/latest) that monitors this guide used a very old version of Java. By specifying it here, we guarantee it's using an up-to-date version of Java.
 
 Summary
 ----------
