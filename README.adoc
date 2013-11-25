@@ -17,7 +17,6 @@ You'll create an application that provides the time of day and then build it wit
  - {jdk}[JDK 6] or later
 
 
-:jump_ahead: Install Maven
 include::https://raw.github.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
 
 [[scratch]]
