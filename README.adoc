@@ -190,6 +190,10 @@ Here's the completed `pom.xml` file:
 ----
 include::complete/pom.xml[]
 ----
+
+NOTE: The completed **pom.xml** file is using the http://maven.apache.org/plugins/maven-shade-plugin/[Maven Shade Plugin]
+for the simple convenience of making the JAR file executable. The focus of this guide is getting started with Maven,
+not using this particular plugin.
     
 == Summary
 Congratulations! You've created a simple yet effective Maven project definition for building Java projects.
