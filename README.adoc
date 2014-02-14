@@ -2,7 +2,7 @@
 tags: [maven]
 projects: []
 ---
-:spring_boot_version: 0.5.0.M6
+:spring_boot_version: 1.0.0.RC3
 :jdk: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 :toc:
 :icons: font
@@ -78,17 +78,10 @@ Now that Maven is installed, you need to create a Maven project definition. Mave
 
 Create a file named _pom.xml_ at the root of the project and give it the following contents:
 
+`pom.xml`
 [source,XML]
 ----
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.springframework.gs</groupId>
-	<artifactId>gs-maven-initial</artifactId>
-	<version>0.1.0</version>
-	<packaging>jar</packaging>
-</project>
+include::initial/pom.xml[]
 ----
 
 With the exception of the optional `<packaging>` element, this is the simplest possible _pom.xml_ file necessary to build a Java project. It includes the following details of the project configuration:
@@ -142,21 +135,10 @@ For example, suppose that in addition to saying "Hello World!", you want the app
 
 First, change HelloWorld.java to look like this:
 
+`src/main/java/hello/HelloWorld.java`
 [source,java]
 ----
-package hello;
-
-import org.joda.time.LocalTime;
-
-public class HelloWorld {
-  public static void main(String[] args) {
-    LocalTime currentTime = new LocalTime();
-    System.out.println("The current local time is: " + currentTime);
-
-    Greeter greeter = new Greeter();
-    System.out.println(greeter.sayHello());
-  }
-}
+include::complete/src/main/java/hello/HelloWorld.java[]
 ----
 
 Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time. 
@@ -165,13 +147,7 @@ If you were to run `mvn compile` to build the project now, the build would fail 
 
 [source,xml]
 ----
-<dependencies>
-    <dependency>
-        <groupId>joda-time</groupId>
-        <artifactId>joda-time</artifactId>
-        <version>2.2</version>
-    </dependency>	
-</dependencies>
+include::complete/pom.xml[tag=joda]
 ----
 
 This block of XML declares a list of dependencies for the project. Specifically, it declares a single dependency for the Joda Time library. Within the `<dependency>` element, the dependency coordinates are defined by three sub-elements:
