@@ -27,7 +27,7 @@ rm -rf target
 
 cd ../initial
 
-mvn clean package
+mvn clean compile
 ret=$?
 if [ $ret -ne 0 ]; then
     exit $ret
