@@ -2,7 +2,7 @@
 tags: [maven]
 projects: []
 ---
-:spring_boot_version: 1.0.2.RELEASE
+:spring_boot_version: 1.1.0.RELEASE
 :jdk: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 :toc:
 :icons: font
