@@ -7,16 +7,6 @@
     <packaging>jar</packaging>
     <version>0.1.0</version>
 
-    <!-- tag::joda[] -->
-    <dependencies>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.2</version>
-        </dependency>
-    </dependencies>
-    <!-- end::joda[] -->
-
     <build>
         <plugins>
             <plugin>
