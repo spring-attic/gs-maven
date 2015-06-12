@@ -8,6 +8,10 @@
     <version>0.1.0</version>
 
     <!-- tag::joda[] -->
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>joda-time</groupId>
