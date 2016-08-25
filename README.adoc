@@ -163,6 +163,31 @@ By default, all dependencies are scoped as `compile` dependencies. That is, they
 
 Now if you run `mvn compile` or `mvn package`, Maven should resolve the Joda Time dependency from the Maven Central repository and the build will be successful.
 
+== Write a Test
+
+First add JUnit as a dependency to your pom.xml, in the test scope:
+
+[source,xml]
+----
+include::complete/pom.xml[tag=junit]
+----
+
+Then create a test case like this:
+
+`src/main/test/hello/HelloWorldTest.java`
+[source,java]
+----
+include::complete/src/test/java/hello/HelloWorldTest.java[]
+----
+
+Maven uses a plugin called "surefire" to run unit tests. The default configuration of this plugin compiles and runs all classes in `src/tets/java` with a name matching `*Test`. You can run the tests on the command line like this
+
+----
+mvn test
+----
+
+or just use `mvn install` step as we already showed above (there is a lifecycle definition where "test" is included as a stage in "install").
+
 Here's the completed `pom.xml` file:
 
 `pom.xml`
