@@ -145,9 +145,11 @@ Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the curren
 
 If you were to run `mvn compile` to build the project now, the build would fail because you've not declared Joda Time as a compile dependency in the build. You can fix that by adding the following lines to _pom.xml_ (within the `<project>` element):
 
-[source,xml]
+[source,xml,indent=0]
 ----
+<dependencies>
 include::complete/pom.xml[tag=joda]
+</dependencies>
 ----
 
 This block of XML declares a list of dependencies for the project. Specifically, it declares a single dependency for the Joda Time library. Within the `<dependency>` element, the dependency coordinates are defined by three sub-elements:
