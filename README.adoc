@@ -141,7 +141,7 @@ First, change HelloWorld.java to look like this:
 include::complete/src/main/java/hello/HelloWorld.java[]
 ----
 
-Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time. 
+Here `HelloWorld` uses Joda Time's `LocalTime` class to get and print the current time.
 
 If you were to run `mvn compile` to build the project now, the build would fail because you've not declared Joda Time as a compile dependency in the build. You can fix that by adding the following lines to _pom.xml_ (within the `<project>` element):
 
@@ -201,9 +201,14 @@ include::complete/pom.xml[]
 NOTE: The completed **pom.xml** file is using the http://maven.apache.org/plugins/maven-shade-plugin/[Maven Shade Plugin]
 for the simple convenience of making the JAR file executable. The focus of this guide is getting started with Maven,
 not using this particular plugin.
-    
+
 == Summary
 Congratulations! You've created a simple yet effective Maven project definition for building Java projects.
 
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+== See Also
 
+The following guides may also be helpful:
+
+* https://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
