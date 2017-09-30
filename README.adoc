@@ -26,7 +26,7 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 [[scratch]]
 == Set up the project
 
-First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, make the project as simple as possible for now.
+First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, make the project as simple as possible for now. Create this structure in a project folder of your choosing.
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/create_directory_structure_hello.adoc[]
 
@@ -76,7 +76,7 @@ Congratulations! You now have Maven installed.
 == Define a simple Maven build
 Now that Maven is installed, you need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file gives the project's name, version, and dependencies that it has on external libraries.
 
-Create a file named _pom.xml_ at the root of the project and give it the following contents:
+Create a file named _pom.xml_ at the root of the project (i.e. put it next to the `src` folder) and give it the following contents:
 
 `pom.xml`
 [source,XML]
