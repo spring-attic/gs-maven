@@ -92,7 +92,7 @@ With the exception of the optional `<packaging>` element, this is the simplest p
 * `<version>`. Version of the project that is being built.
 * `<packaging>` - How the project should be packaged. Defaults to "jar" for JAR file packaging. Use "war" for WAR file packaging.
 
-NOTE: When it comes to choosing a versioning scheme, Spring recommends the [semantic versioning](http://semver.org) approach.
+NOTE: When it comes to choosing a versioning scheme, Spring recommends the http://semver.org[semantic versioning] approach.
 
 At this point you have a minimal, yet capable Maven project defined.
 
