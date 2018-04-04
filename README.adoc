@@ -1,9 +1,9 @@
-:spring_boot_version: 1.5.10.RELEASE
 :jdk: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 :toc:
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-maven
+
 This guide walks you through using Maven to build a simple Java project.
 
 == What you'll build
@@ -14,8 +14,7 @@ You'll create an application that provides the time of day and then build it wit
 
  - About 15 minutes
  - A favorite text editor or IDE
- - {jdk}[JDK 6] or later
-
+ - {jdk}[JDK 8] or later
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
 
@@ -70,12 +69,13 @@ OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
 Congratulations! You now have Maven installed.
 
 == Define a simple Maven build
+
 Now that Maven is installed, you need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file gives the project's name, version, and dependencies that it has on external libraries.
 
 Create a file named _pom.xml_ at the root of the project (i.e. put it next to the `src` folder) and give it the following contents:
 
 `pom.xml`
-[source,XML]
+[source,xml]
 ----
 include::initial/pom.xml[]
 ----
@@ -125,6 +125,7 @@ The _install_ goal will compile, test, and package your project's code and then 
 Speaking of dependencies, now it's time to declare dependencies in the Maven build.
 
 == Declare Dependencies
+
 The simple Hello World sample is completely self-contained and does not depend on any additional libraries. Most applications, however, depend on external libraries to handle common and complex functionality.
 
 For example, suppose that in addition to saying "Hello World!", you want the application to print the current date and time. While you could use the date and time facilities in the native Java libraries, you can make things more interesting by using the Joda Time libraries.
@@ -165,7 +166,7 @@ Now if you run `mvn compile` or `mvn package`, Maven should resolve the Joda Tim
 
 First add JUnit as a dependency to your pom.xml, in the test scope:
 
-[source,xml]
+[source,xml,indent=0]
 ----
 include::complete/pom.xml[tag=junit]
 ----
