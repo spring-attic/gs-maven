@@ -1,4 +1,4 @@
-:jdk: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+:jdk: http://openjdk.java.net/install/
 :toc:
 :icons: font
 :source-highlighter: prettify
@@ -58,15 +58,18 @@ mvn -v
 If all goes well, you should be presented with some information about the Maven installation. It will look similar to (although perhaps slightly different from) the following:
 
 ....
-Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 07:51:28-0600)
-Maven home: /usr/share/maven
-Java version: 1.7.0_09, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:47+00:00)
+Maven home: /home/dsyer/Programs/apache-maven
+Java version: 1.8.0_152, vendor: Azul Systems, Inc.
+Java home: /home/dsyer/.sdkman/candidates/java/8u152-zulu/jre
+Default locale: en_GB, platform encoding: UTF-8
+OS name: "linux", version: "4.15.0-36-generic", arch: "amd64", family: "unix"
 ....
 
 Congratulations! You now have Maven installed.
+
+INFO: You might like to consider using the https://github.com/takari/maven-wrapper[Maven wrapper] to insulate your developers against having the correct version of Maven, or having to install it at all. Projects downloaded from https://start.spring.io[Spring Initializr] have the wrapper included. It shows up as a script `mvnw` in the top level of your project which you run in place of `mvn`.
+
 
 == Define a simple Maven build
 
@@ -91,7 +94,6 @@ With the exception of the optional `<packaging>` element, this is the simplest p
 NOTE: When it comes to choosing a versioning scheme, Spring recommends the http://semver.org[semantic versioning] approach.
 
 At this point you have a minimal, yet capable Maven project defined.
-
 
 == Build Java code
 Maven is now ready to build the project. You can execute several build lifecycle goals with Maven now, including goals to compile the project's code, create a library package (such as a JAR file), and install the library in the local Maven dependency repository.
