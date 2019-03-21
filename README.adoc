@@ -1,4 +1,4 @@
-:jdk: http://openjdk.java.net/install/
+:jdk: https://openjdk.java.net/install/
 :toc:
 :icons: font
 :source-highlighter: prettify
@@ -45,7 +45,7 @@ include::initial/src/main/java/hello/Greeter.java[]
 
 Now that you have a project that is ready to be built with Maven, the next step is to install Maven.
 
-Maven is downloadable as a zip file at http://maven.apache.org/download.cgi. Only the binaries are required, so look for the link to apache-maven-_{version}_-bin.zip or apache-maven-_{version}_-bin.tar.gz.
+Maven is downloadable as a zip file at https://maven.apache.org/download.cgi. Only the binaries are required, so look for the link to apache-maven-_{version}_-bin.zip or apache-maven-_{version}_-bin.tar.gz.
 
 Once you have downloaded the zip file, unzip it to your computer. Then add the _bin_ folder to your path.
 
@@ -91,7 +91,7 @@ With the exception of the optional `<packaging>` element, this is the simplest p
 * `<version>`. Version of the project that is being built.
 * `<packaging>` - How the project should be packaged. Defaults to "jar" for JAR file packaging. Use "war" for WAR file packaging.
 
-NOTE: When it comes to choosing a versioning scheme, Spring recommends the http://semver.org[semantic versioning] approach.
+NOTE: When it comes to choosing a versioning scheme, Spring recommends the https://semver.org[semantic versioning] approach.
 
 At this point you have a minimal, yet capable Maven project defined.
 
@@ -197,7 +197,7 @@ Here's the completed `pom.xml` file:
 include::complete/pom.xml[]
 ----
 
-NOTE: The completed **pom.xml** file is using the http://maven.apache.org/plugins/maven-shade-plugin/[Maven Shade Plugin]
+NOTE: The completed **pom.xml** file is using the https://maven.apache.org/plugins/maven-shade-plugin/[Maven Shade Plugin]
 for the simple convenience of making the JAR file executable. The focus of this guide is getting started with Maven,
 not using this particular plugin.
 
