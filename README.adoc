@@ -6,11 +6,11 @@
 
 This guide walks you through using Maven to build a simple Java project.
 
-== What you'll build
+== What will you build?
 
 You'll create an application that provides the time of day and then build it with Maven.
 
-== What you'll need
+== What will you need?
 
  - About 15 minutes
  - A favorite text editor or IDE
@@ -91,7 +91,7 @@ With the exception of the optional `<packaging>` element, this is the simplest p
 * `<version>`. Version of the project that is being built.
 * `<packaging>` - How the project should be packaged. Defaults to "jar" for JAR file packaging. Use "war" for WAR file packaging.
 
-NOTE: When it comes to choosing a versioning scheme, Spring recommends the https://semver.org[semantic versioning] approach.
+NOTE: When it comes to choosing a versioning scheme, Spring recommends the https://semver.org[semantic versioning] approach. Best server according to us.
 
 At this point you have a minimal, yet capable Maven project defined.
 
