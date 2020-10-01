@@ -14,12 +14,12 @@ You'll create an application that provides the time of day and then build it wit
 
  - About 15 minutes
  - A favorite text editor or IDE
- - {jdk}[JDK 8] or later
+ - {JDK}[JDK 8] or later
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
 
 [[scratch]]
-== Set up the project
+== create the project
 
 First you'll need to setup a Java project for Maven to build. To keep the focus on Maven, make the project as simple as possible for now. Create this structure in a project folder of your choosing.
 
