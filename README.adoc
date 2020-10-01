@@ -71,11 +71,11 @@ Congratulations! You now have Maven installed.
 INFO: You might like to consider using the https://github.com/takari/maven-wrapper[Maven wrapper] to insulate your developers against having the correct version of Maven, or having to install it at all. Projects downloaded from https://start.spring.io[Spring Initializr] have the wrapper included. It shows up as a script `mvnw` in the top level of your project which you run in place of `mvn`.
 
 
-== Define a very simple Maven build
+== Define a  simple Maven build
 
 Now that Maven is installed, you need to create a Maven project definition. Maven projects are defined with an XML file named _pom.xml_. Among other things, this file gives the project's name, version, and dependencies that it has on external libraries.
 
-Create a file named _pom.xml_ at the root of the project (i.e. put it next to the `src` folder) and give it the following contents:
+Create a file named as _pom.xml_ at the root of the project (i.e. put it next to the `src` folder) and give it the following contents:
 
 `pom.xml`
 [source,xml]
@@ -83,7 +83,7 @@ Create a file named _pom.xml_ at the root of the project (i.e. put it next to th
 include::initial/pom.xml[]
 ----
 
-With the exception of the optional `<packaging>` element, this is the simplest possible _pom.xml_ file necessary to build a Java project. It includes the following details of the project configuration:
+With the exception of  optional `<packaging>` element, this is the simplest possible _pom.xml_ file necessary to build a Java project. It includes the following details of the project configuration:
 
 * `<modelVersion>`. POM model version (always 4.0.0).
 * `<groupId>`. Group or organization that the project belongs to. Often expressed as an inverted domain name.
