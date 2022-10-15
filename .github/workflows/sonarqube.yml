@@ -23,8 +23,8 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
-        name: target
-        path: initial/target
+        name: initial
+        path: initial
 
   sonarQube:
     needs: build
@@ -35,10 +35,12 @@ jobs:
     - name: Donwload build artifact
       uses: actions/download-artifact@v2
       with:
-        name: target
-        path: initial/target
+        name: initial
+        path: initial
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
+      with:
+        projectBaseDir: initial/src
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST }}
