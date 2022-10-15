@@ -23,8 +23,8 @@ jobs:
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
-        name: build
-        path: build/classes
+        name: target
+        path: target
 
   sonarQube:
     needs: build
@@ -35,8 +35,8 @@ jobs:
     - name: Donwload build artifact
       uses: actions/download-artifact@v2
       with:
-        name: build
-        path: build/classes
+        name: target
+        path: target
     - name: SonarQube Scan
       uses: kitabisa/sonarqube-action@master
       with:
