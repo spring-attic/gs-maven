@@ -38,9 +38,7 @@ jobs:
         name: initial
         path: initial
     - name: SonarQube Scan
-      uses: sonarsource/sonarqube-scan-action@master
+      uses: kitabisa/sonarqube-action@master
       with:
-        projectBaseDir: initial/src
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST }}
+        host: ${{ secrets.SONAR_HOST }}
+        login: ${{ secrets.SONAR_TOKEN }}
