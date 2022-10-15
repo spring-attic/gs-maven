@@ -17,8 +17,9 @@ jobs:
         architecture: x64
         targets: 'JAVA_HOME'
     - name: Build with Maven
-      run: cd initial
-      run: mvn clean install
+      run: |
+        cd initial
+        mvn clean test
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
