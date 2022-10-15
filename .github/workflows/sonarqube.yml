@@ -18,8 +18,6 @@ jobs:
         targets: 'JAVA_HOME'
     - name: Build with Maven
       run: mvn clean install
-      sonar_analysis:
-        needs: maven-build
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
