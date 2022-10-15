@@ -38,8 +38,7 @@ jobs:
         name: target
         path: initial/target
     - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@master
+      uses: sonarsource/sonarqube-scan-action@master
       with:
         host: ${{ secrets.SONAR_HOST }}
         login: ${{ secrets.SONAR_TOKEN }}
-        projectBaseDir: '/github/workspace'
