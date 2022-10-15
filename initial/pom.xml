@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+		<sonar.host.url>http://hyeonykim.homedns.tv:9000/</sonar.host.url>
+		<sonar.login>2a5cd241703d2515f7538bfe951d61a0b98ba1c4</sonar.login>
     </properties>
 
 	<dependencies>
@@ -65,4 +67,5 @@
         </plugin>
         </plugins>
     </build>
+
 </project>
