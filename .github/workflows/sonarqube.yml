@@ -20,6 +20,7 @@ jobs:
       run: |
         cd initial
         mvn clean test
+        ls -R
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
