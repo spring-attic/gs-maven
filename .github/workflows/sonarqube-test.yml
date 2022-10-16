@@ -1,6 +1,9 @@
 on:
   # schedule:
     # - cron: '0 * * * 1'
+  on:
+    pull_request:
+      branches: [ "main" ]
   workflow_dispatch:
 
 name: SonarQube-Test Workflow
@@ -26,4 +29,24 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: initial
-        path: initial/target/classes
+        path: initial
+
+  sonarQube:
+    nodes: build
+    name: SonarQube
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download build artifact
+      uses: action/download-artifact@v2
+      with:
+        name: initial
+        path:initial/target/classes
+    - name: Check Directory
+      run: ls -R ./
+    - name: SonarQube Scanner
+      uses: ItsEcholot/sonarqube-action@v0.0.2
+      with:
+        host: ${{ secrets.SONAR_HOST }}
+        login: ${{ secrets.SONAR_TOKEN }}
+        projectBaseDir: '/github/workspace'
