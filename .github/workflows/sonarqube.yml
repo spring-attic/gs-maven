@@ -38,8 +38,8 @@ jobs:
       with:
         name: initial
         path: initial/target/classes
-    - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@master
+    - name: SonarQube Scanner
+      uses: ItsEcholot/sonarqube-action@v0.0.2
       with:
         host: ${{ secrets.SONAR_HOST }}
         login: ${{ secrets.SONAR_TOKEN }}
