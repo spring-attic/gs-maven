@@ -41,7 +41,7 @@ jobs:
       uses: action/download-artifact@v2
       with:
         name: initial
-        path:initial/target/classes
+        path: initial/target/classes
     - name: Check Directory
       run: ls -R ./
     - name: SonarQube Scanner
