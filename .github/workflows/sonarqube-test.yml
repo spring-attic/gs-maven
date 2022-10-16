@@ -23,7 +23,6 @@ jobs:
         cd initial
         ls -R
         mvn clean test
-        mvn sonar:sonar
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
