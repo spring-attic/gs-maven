@@ -3,7 +3,7 @@ on:
     # - cron: '0 * * * 1'
   workflow_dispatch:
 
-name: SonarQube Workflow
+name: SonarQube-Test Workflow
 jobs:
   build:
     name: Build
@@ -19,8 +19,9 @@ jobs:
     - name: Build with Maven
       run: |
         cd initial
-        mvn clean test sonar:sonar
         ls -R
+        mvn clean Test
+        mvn sonar:sonar
     - name: Upload build artifact
       uses: actions/upload-artifact@v2
       with:
