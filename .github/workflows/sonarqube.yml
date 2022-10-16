@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: initial
-        path: initial/targets/classes
+        path: initial/target/classes
 
   sonarQube:
     needs: build
@@ -37,7 +37,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: initial
-        path: initial/targets/classes
+        path: initial/target/classes
     - name: SonarQube Scan
       uses: kitabisa/sonarqube-action@master
       with:
