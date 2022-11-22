@@ -13,13 +13,13 @@ pipeline {
 
 	stages {
 		stage('download') {
-			step{
+			steps{
 			 git branch: 'develop', url: 'https://github.com/vinayramireddy/gs-maven.git'
 			}
 		}
 		
 		stage ('build'){
-		   step{
+		   steps{
 		    sh 'mvn clean package'
 		   }
 		}
