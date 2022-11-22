@@ -20,9 +20,10 @@ pipeline {
 		
 		stage ('build'){
 		   steps{
-		   sh 'cd gs-maven/complete; pwd'	   
-		   sh  'mvn clean package'
-		   }
+			dir('complete') {	   
+		   	sh  'mvn clean package'
+		   	}
+		  }
 		}
 	}
 	}
