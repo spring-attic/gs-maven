@@ -22,7 +22,7 @@ dependency-reduced-pom.xml
 .project
 .settings/
 
-# IntelliJ IDEA Files
+## IntelliJ IDEA Files
 
 *.iml
 *.ipr
