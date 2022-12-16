@@ -100,6 +100,7 @@ Maven is now ready to build the project. You can execute several build lifecycle
 
 To try out the build, issue the following at the command line:
 
+[source,text]
 ----
 mvn compile
 ----
@@ -108,6 +109,7 @@ This will run Maven, telling it to execute the _compile_ goal. When it's finishe
 
 Since it's unlikely that you'll want to distribute or work with _.class_ files directly, you'll probably want to run the _package_ goal instead:
 
+[source,text]
 ----
 mvn package
 ----
@@ -116,6 +118,7 @@ The _package_ goal will compile your Java code, run any tests, and finish by pac
 
 To execute the JAR file run:
 
+[source,text]
 ----
 java -jar target/gs-maven-0.1.0.jar
 ----
@@ -124,6 +127,7 @@ NOTE: If you've changed the value of `<packaging>` from "jar" to "war", the resu
 
 Maven also maintains a repository of dependencies on your local machine (usually in a _.m2/repository_ directory in your home directory) for quick access to project dependencies. If you'd like to install your project's JAR file to that local repository, then you should invoke the `install` goal:
 
+[source,text]
 ----
 mvn install
 ----
@@ -189,6 +193,7 @@ include::complete/src/test/java/hello/GreeterTest.java[]
 
 Maven uses a plugin called "surefire" to run unit tests. The default configuration of this plugin compiles and runs all classes in `src/test/java` with a name matching `*Test`. You can run the tests on the command line like this
 
+[source,text]
 ----
 mvn test
 ----
