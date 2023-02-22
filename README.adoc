@@ -56,9 +56,9 @@ mvn -v
 If all goes well, you should be presented with some information about the Maven installation. It will look similar to (although perhaps slightly different from) the following:
 
 ....
-Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T16:41:47+00:00)
+Apache Maven 3.8.7 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2022-12-10T16:41:47+00:00)
 Maven home: /home/dsyer/Programs/apache-maven
-Java version: 1.8.0_152, vendor: Azul Systems, Inc.
+Java version: 17, vendor: Azul Systems, Inc.
 Java home: /home/dsyer/.sdkman/candidates/java/8u152-zulu/jre
 Default locale: en_GB, platform encoding: UTF-8
 OS name: "linux", version: "4.15.0-36-generic", arch: "amd64", family: "unix"
