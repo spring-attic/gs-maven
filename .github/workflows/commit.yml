@@ -7,8 +7,8 @@ jobs:
   block-sensitive-data-commits:
     runs-on: ubuntu-latest
     steps:
-      - name: Check for Sensitive Data
-        uses: reviewdog/action-git-secrets@v2.x
+      - name: Run detect-secrets with reviewdog
+        uses: reviewdog/action-detect-secrets@v0.11.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Customize scan options as needed
