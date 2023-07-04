@@ -1,14 +1,14 @@
 pipeline {
 	agent any
 
-	triggers {
-		pollSCM 'H/10 * * * *'
-	}
+	// triggers {
+	// 	pollSCM 'H/10 * * * *'
+	// }
 
-	options {
-		disableConcurrentBuilds()
-		buildDiscarder(logRotator(numToKeepStr: '14'))
-	}
+	// options {
+	// 	disableConcurrentBuilds()
+	// 	buildDiscarder(logRotator(numToKeepStr: '14'))
+	// }
 
 	stages {
 		stage("test: baseline (jdk8)") {
@@ -29,10 +29,10 @@ pipeline {
 	post {
 		changed {
 			script {
-				slackSend(
-						color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
-						channel: '#sagan-content',
-						message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
+				// slackSend(
+				// 		color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
+				// 		channel: '#sagan-content',
+				// 		message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
 				emailext(
 						subject: "[${currentBuild.fullDisplayName}] ${currentBuild.currentResult}",
 						mimeType: 'text/html',
