@@ -11,6 +11,14 @@ pipeline {
 	// }
 
 	stages {
+
+                stage("Build"){
+
+                 steps {
+                   sh 'mvn clean install -f complete/pom.xml'
+
+                   }
+                  }
 		stage("test: baseline (jdk8)") {
 			//agent {
 			// 	docker {
@@ -19,6 +27,7 @@ pipeline {
 			// 	}
 			// }
 			// options { timeout(time: 30, unit: 'MINUTES') }
+
 			steps {
 				sh 'test/run.sh'
 			}
