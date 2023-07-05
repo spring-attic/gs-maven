@@ -1,4 +1,4 @@
-:jdk: https://openjdk.java.net/install/
+jdk: https://openjdk.java.net/install/
 :toc:
 :icons: font
 :source-highlighter: prettify
