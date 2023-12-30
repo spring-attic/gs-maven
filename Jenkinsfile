@@ -1,24 +1,26 @@
 pipeline {
-	agent none
+	agent any
 
-	triggers {
-		pollSCM 'H/10 * * * *'
-	}
+	// triggers {
+	// 	pollSCM 'H/10 * * * *'
+	// }
 
-	options {
-		disableConcurrentBuilds()
-		buildDiscarder(logRotator(numToKeepStr: '14'))
-	}
+	// options {
+	// 	disableConcurrentBuilds()
+	// 	buildDiscarder(logRotator(numToKeepStr: '14'))
+	// }
 
 	stages {
+
+                stage("Build"){
+
+                 steps {
+                   sh 'mvn clean install -f complete/pom.xml'
+
+                   }
+                  }
 		stage("test: baseline (jdk8)") {
-			agent {
-				docker {
-					image 'adoptopenjdk/openjdk8:latest'
-					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
-				}
-			}
-			options { timeout(time: 30, unit: 'MINUTES') }
+
 			steps {
 				sh 'test/run.sh'
 			}
@@ -29,10 +31,10 @@ pipeline {
 	post {
 		changed {
 			script {
-				slackSend(
-						color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
-						channel: '#sagan-content',
-						message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
+				// slackSend(
+				// 		color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
+				// 		channel: '#sagan-content',
+				// 		message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
 				emailext(
 						subject: "[${currentBuild.fullDisplayName}] ${currentBuild.currentResult}",
 						mimeType: 'text/html',

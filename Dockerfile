@@ -1,0 +1,3 @@
+FROM JDK
+COPY .
+
