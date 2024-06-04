@@ -4,6 +4,8 @@
 :source-highlighter: prettify
 :project_id: gs-maven
 
+# This repository is no longer maintained.
+
 This guide walks you through using Maven to build a simple Java project.
 
 == What you'll build
